@@ -1,167 +1,46 @@
-# Psicomanager FrontEnd Challenge
+# Getting Started with Create React App
 
-![Psicomanager](/logo_psicomanager.png)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Desafio
+## Available Scripts
 
-O desafio consiste em implementar o fluxo de ativação do PsicoBank no PsicoManager, permitindo que os usuários configurem conta bancária e opções de cobrança de forma intuitiva. A solução deve ser responsiva, validar dados em tempo real e seguir fielmente o protótipo fornecido.
+In the project directory, you can run:
 
-Não utilizaremos nada do seu projeto além de avaliar suas habilidades.
+### `yarn start`
 
-## Envio
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Faça um fork deste repositório
-- Crie sua branch
-- ⚠️ Faça um commit inicial ao começar
-- ⚠️ Faça um commit final ao concluir
-- Quando terminar, envie um pull request para nós
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Stack
+### `yarn test`
 
-- TypeScript
-- React
-- React-Hook-Form
-- Zod
-- Styled-Components
-- react-quill
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Protótipo
+### `yarn build`
 
-https://www.figma.com/design/kZ59orUONXXeNTCuQZmars/Desafio-T%C3%A9cnico---Dev-Front-End-(Pleno)?node-id=7-15782&node-type=canvas&t=UjEEhRjN4H9z4Heo-0
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## História
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### História do Usuário:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Como usuário do PsicoManager, eu quero ser capaz de ativar o PsicoBank, preencher as informações necessárias em uma interface de fácil navegação, e configurar minha conta bancária e opções de cobrança, para que eu possa começar a usar o PsicoBank de maneira eficiente, sem dificuldades.
+### `yarn eject`
 
-Necessidade
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-O usuário precisa de um processo claro e guiado para:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. Cadastrar uma conta bancária no sistema.
-2. Configurar canais de envio e mensagens de cobrança de maneira personalizada.
-3. Definir forma de pagamento e outras configurações relacionadas a cobranças.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Solução:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Desenvolver um fluxo de ativação com modal e passos sequenciais para guiar o usuário. O modal será interativo e terá validação em tempo real, além de ser responsivo. O design será fiel ao protótipo Figma para garantir a consistência visual e a melhor experiência de usuário.
+## Learn More
 
----
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Critérios de Aceite:
-
-Geral
-
-- Responsividade: O design e funcionalidades devem ser consistentes e funcionais tanto para desktop quanto para dispositivos móveis.
-
-- Ser fiel ao protótipo realizar o desktop e mobile
-
-- Sidebar fixa: Exibida com a seção Financeiro ativa e aberta por padrão. Conforme protótipo na ordem: painel, clientes, agenda, financeiro, relatórios, marketing, configuração e minha clinica, sendo clicavel para o case apenas o financeiro.
-
-- Itens: Sidebar com ícones e títulos conforme a ordem do protótipo. Apenas o item Financeiro estará ativo para o caso de uso.
-- Botão: Centralizado,>>financeiro com a opção Ativar PsicoBank que abrirá a modal.
-
-Modal: Título do modal Ativar o PsicoBank - Etapas do modal: Cadastrar uma conta (passo 1), Canais de envio e Mensagem de cobrança (passo 2 ) e Forma de pagamento da cobrança (passo 3).
-
-### Passo 1: Cadastrar uma Conta Bancária
-
-1. Wizard (etapas/Steps):
-
-- Passo atual check no step, etapas futuras desabilitadas até o usuário avançar.
-- A interface do wizard deve ser interativa e exibir a etapa correta com destaque.
-
-2. Campos obrigatórios:
-   - Profissional: Pré-selecionado e desabilitado.
-   - Banco: Dropdown obrigatória com opções do protótipo.
-   - Tipo de Conta: Dropdown obrigatória com opções do protótipo.
-   - Agência: Campo text obrigatório.
-   - Conta com Dígito: Campo text obrigatório.
-   - Tipo de Pessoa: Dropdown obrigatória.
-   - CPF: Campo com máscara e obrigatório.
-   - Telefone: Campo com máscara e obrigatório.
-   - Nome Completo: Campo texto.
-   - CEP: Campo com máscara e obrigatório.
-   - Estado: Dropdown obrigatória.
-   - Cidade: Campo texto obrigatório.
-   - Endereço: Campo texto obrigatório.
-   - Número: Campo texto obrigatório.
-
-Após escolher "Pessoa Jurídica" no dropdown "Tipo de pessoa", os campos obrigatórios se adaptam para:
-
-- Razão Social (campo de texto, obrigatório).
-- CNPJ (campo com máscara, obrigatório, substituindo o CPF).
-- Nome do responsável pela conta (campo de texto, obrigatório).
-- CPF do responsável pela conta (campo com máscara, obrigatório).
-- Todos os outros campos obrigatórios (Banco, Tipo de conta, Agência, Conta com dígito, Telefone, CEP, Estado, Cidade, Endereço e Número) permanecem os mesmos.
-- Botões "Cancelar" e "Próximo" mantêm suas funcionalidades. O mesmo aos demais passos não sofrem alteração
-
-3. Botões de Navegação:
-
-   - Cancelar: Retorna ao estado anterior.
-   - Próximo: Valida os campos obrigatórios e avança para a próxima etapa.
-
-4. Validação em Tempo Real:
-   - Se campos obrigatórios não forem preenchidos, deve exibir uma flag de erro e o comportamento do campo com erro
-
-### Passo 2: Canais de Envio e Mensagens de Cobrança
-
-1. Wizard:
-
-   - A etapa atual não é marcada com um check , enquanto as etapas anteriores estarão com check e as posteriores desabilitadas.
-
-2. Campos obrigatórios:
-
-   - Profissional: Desabilitado e pré-preenchido do passo anterior.
-   - Marcação Dinâmica: Campo de dropdown opções conforme prototipo. Ao clicar no botão inserir reflete na formatação e texto.
-   - Conteúdo da Mensagem: Editor de texto com as opções de formatação: desfaz e refaz, Formato titulo 1 ao 6, negrito, itálico, alinhamento à direita, centralizado, à esquerda, justificar, lista desordenada, lista ordenada e link tooltip nas opções. O texto já esta previsto no protótipo assim como o comportamento ao inserir a marcação dinâmica no conteúdo da mensagem.
-
-3. Botões de Navegação:
-   - Cancelar: Fecha o modal.
-   - Próximo: Avança para o próximo passo, se campos obrigatórios não forem preenchidos, deve exibir uma flag de erro e o comportamento do campo com erro.
-
-### Passo 3: Forma de Pagamento da Cobrança
-
-1. Wizard
-   - A etapa atual será marcada com estado de acesso, enquanto as etapas anteriores estarão com check.
-2. Campos obrigatórios:
-
-   - Profissional: Desabilitado e pré-preenchido do passo anterior.
-   - Métodos de Pagamento: Checkboxes com seleção única.
-   - Cobrar Multa: Campo para selecionar o valor da multa, com campo de texto para inserção do valor em %.
-   - Cobrar Juros: Campo para inserir juros, check.
-
-3. Botões de Navegação:
-
-   - Cancelar: Fecha o modal.
-   - Concluir: Fecha o modal e exibe uma flag de sucesso após 3 segundos. Alterando a pagina final sidebar >>financeiro.
-
-4. Validação em Tempo Real:
-   - Se algum campo obrigatório não for preenchido, deve exibir uma flag de erro, assim como estado de campo.
-
-### Pontos Adicionais
-
-1. Persistência de Dados:
-
-   - As informações preenchidas devem ser salvas ao avançar ou retroceder no wizard. Isso garante que o usuário não perca as informações ao navegar entre as etapas.
-
-2. Comportamento de Componentes:
-
-   - Implementar os **estados de hover**, **selected**, **disabled**, **error** e **rest** nos campos e botões.
-
-3. Log de Dados:
-
-   - Após o usuário clicar em **Concluir**, exibir as informações salvas no console do navegador para garantir que todos os dados estão sendo armazenados corretamente.
-
-4. Design Fiel:
-
-- Elementos visuais devem ser consistentes com o protótipo do Figma.
-
-5. Flags
-
-- Mensagem de sucesso deve ser exibida após a conclusão do cadastro e desaparecer automaticamente após 3 segundos
-
-6. Campos:
-
-- Campos com máscara devem formatar automaticamente os dados inseridos (ex: CPF, Telefone, CEP).
-  -Comportamento dos componentes deve ser consistente em todos os estados: rest, selected, hover, error e disabled.
+To learn React, check out the [React documentation](https://reactjs.org/).
